@@ -5,7 +5,7 @@ export const getUserRankController = async (req: Request, res: Response): Promis
   const {  userId } = req.query;
 
   if (!userId) {
-    res.status(400).json({ error: 'gameId and userId are required.' });
+    res.status(400).json({ error: 'userId are required.' });
     return;
   }
 
