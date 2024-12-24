@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   app:
     build:
@@ -10,6 +9,7 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - PORT=3000
+      - MONGO_URI=mongodb+srv://bcc1nc1oglu:0KOB9YyptmEPjSAL@cluster0.9djsobr.mongodb.net/leaderboard
     depends_on:
       - redis
     volumes:
@@ -22,6 +22,8 @@ services:
     container_name: redis
     ports:
       - "6379:6379"
+    volumes:
+      - redis_data:/data # Redis verileri için kalıcı hacim
     command: ["redis-server", "--appendonly", "yes"]
 
 volumes:
