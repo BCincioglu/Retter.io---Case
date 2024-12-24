@@ -1,4 +1,5 @@
 import redisClient from '../utils/redisClient.js';
+import User from '../models/User.js';
 
 export const postSubmitScore = async (
   gameId: string,
@@ -6,13 +7,19 @@ export const postSubmitScore = async (
   score: number
 ): Promise<{ gameId: string, userId: string, score: number, rank: number }> => {
   const leaderboardKey = "leaderboard";
-  
- try {
-    const currentScore = await redisClient.zScore(leaderboardKey, userId); // Check player's current rank
 
+  const user = await User.findOne({ userId });
+  if (!user) {
+    throw new Error('User not found');
+  }
+  
+  const redisValue = `${userId}:${user.userName}`; // Keep leaderboard key as "userId:UserName"
+
+ try {
+    const currentScore = await redisClient.zScore(leaderboardKey, redisValue); // Check player's current rank
     if (currentScore === null || score > currentScore) {   // If first time or new score higher set score at leaderboard
-      await redisClient.zAdd(leaderboardKey, { score, value: userId });
-      const rank = await redisClient.zRevRank(leaderboardKey, userId);
+      await redisClient.zAdd(leaderboardKey, { score, value: redisValue });
+      const rank = await redisClient.zRevRank(leaderboardKey, redisValue);
       return { userId, gameId,  score, rank: rank !== null ? rank + 1 : -1 };
     }
 

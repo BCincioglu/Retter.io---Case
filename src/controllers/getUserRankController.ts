@@ -12,8 +12,12 @@ export const getUserRankController = async (req: Request, res: Response): Promis
   try {
     const result = await getUserRank(userId as string);
     res.status(200).json(result);
-  } catch (error) {
-    console.error('Error in getUserRankController:', error);
-    res.status(500).json({ error: 'Internal server error.' });
+  } catch (error: any) {
+    if (error.message === 'Invalid User ID') {
+      res.status(404).json({ error: error.message });
+    }else {
+      console.error('Error in getUserRankController:', error);
+      res.status(500).json({ error: 'Internal server error.' });
+    }
   }
 };
