@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { postSubmitScoreController } from '../controllers/postSubmitScoreController.js';
 import { getLeaderboardController } from '../controllers/getLeaderboardController.js';
 import { getUserRankController } from '../controllers/getUserRankController.js';
-import { authenticateToken } from '../middleware/authMiddleware';
+import { authenticateToken } from '../middleware/authMiddleware.js';
 
 const router = Router();
 
