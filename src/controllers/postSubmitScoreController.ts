@@ -2,7 +2,8 @@ import { Request, Response } from "express";
 import { postSubmitScore } from "../services/postSubmitScore.js";
 
 export const postSubmitScoreController = async (req:Request, res:Response): Promise<void> => {
-    const { gameId, userId, score } = req.body;
+    const { gameId, score } = req.body;
+    const { userId } = req.user!;
 
     if (!gameId || !userId || typeof score !== 'number') {
         res.status(400).json({ error: 'gameId, userId, and score are required.' });
