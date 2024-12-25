@@ -53,8 +53,10 @@ docker compose up --build
 #### Request : http://localhost:3000/leaderboard/submit-score
 
 #### HTTP Method: POST
-```json
+```
 Header: Authorization - Value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiaWF0IjoxNzM1MDg0NzY0LCJleHAiOjE3MzUwODgzNjR9.dMV7lLeluKo_ykB46RmCQaYFRkQjFM9y8DuPLa9Lb-w
+```
+```json
 
 {
     "score": 100,
