@@ -3,7 +3,6 @@ import User from '../models/User.js';
 
 export const seedUsers = async () => {
   
-  // Eklenecek kullanıcılar
   const users = [
     { userId: '1', userName: 'Alice' },
     { userId: '2', userName: 'Bob' },
