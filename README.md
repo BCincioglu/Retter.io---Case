@@ -1,4 +1,4 @@
-# RETTER.IO - Leaderboard Case
+# RETTER.io - Leaderboard Case
 
 ## Overview
 This application provides a scalable leaderboard system for a gaming platform. It allows players to submit their scores, view the top-ranked players, and check their individual rankings. The system is designed for performance and simplicity, leveraging Redis for fast leaderboard storage and MongoDB for user data management.
