@@ -74,6 +74,15 @@ Header: Authorization - Value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c
     "rank": 1
 }
 ```
+#### OR
+```json
+{
+    "userId": "1",
+    "gameId": "game1",
+    "score": 100,
+    "rank": -1 // If it's not players highest score rank return -1
+}
+```
 NOTE: No more userId require while score submitting, becasue token already has that information.
 
 ### 3. Show Leaderboard
