@@ -80,7 +80,7 @@ Header: Authorization - Value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c
     "userId": "1",
     "gameId": "game1",
     "score": 100,
-    "rank": -1 // If it's not players highest score rank return -1
+    "rank": -1 // If player already has higher score rank return -1
 }
 ```
 NOTE: No more userId require while score submitting, becasue token already has that information.
