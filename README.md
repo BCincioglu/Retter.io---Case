@@ -48,6 +48,8 @@ docker compose up --build
     "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiaWF0IjoxNzM1MDg0NzY0LCJleHAiOjE3MzUwODgzNjR9.dMV7lLeluKo_ykB46RmCQaYFRkQjFM9y8DuPLa9Lb-w"
 }
 ```
+NOTE: Use userId from 1 to 5, because only those id's have names defined at database (look ``` src/seeds/seedUser.ts ```)
+
 ### 2. Submit Score
 
 #### Request : http://localhost:3000/leaderboard/submit-score
