@@ -37,40 +37,39 @@ docker compose up --build
 #### Request : http://localhost:3000/auth/login
 
 #### HTTP Method: POST
-
+```json
 {
     "userId": "1"
 }
-
+```
 #### Response
-
+```json
 {
     "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiaWF0IjoxNzM1MDg0NzY0LCJleHAiOjE3MzUwODgzNjR9.dMV7lLeluKo_ykB46RmCQaYFRkQjFM9y8DuPLa9Lb-w"
-    
 }
-
+```
 ### 2. Submit Score
 
 #### Request : http://localhost:3000/leaderboard/submit-score
 
 #### HTTP Method: POST
-
+```json
 Header: Authorization - Value: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiaWF0IjoxNzM1MDg0NzY0LCJleHAiOjE3MzUwODgzNjR9.dMV7lLeluKo_ykB46RmCQaYFRkQjFM9y8DuPLa9Lb-w
 
 {
     "score": 100,
     "gameId": "game1"
 }
-
+```
 #### Response
-
+```json
 {
     "userId": "1",
     "gameId": "game1",
     "score": 100,
     "rank": 1
 }
-
+```
 NOTE: No more userId require while score submitting, becasue token already has that information.
 
 ### 3. Show Leaderboard
@@ -80,7 +79,7 @@ NOTE: No more userId require while score submitting, becasue token already has t
 #### HTTP Method: GET
 
 #### Response
-
+```json
 [
     {
         "rank": 1,
@@ -98,7 +97,7 @@ NOTE: No more userId require while score submitting, becasue token already has t
         "score": 10
     }
 ]
-
+```
 ### 4. Show Players Individual Highest Score
 
 #### Request : http://localhost:3000/leaderboard/rank?userId=1
@@ -106,19 +105,19 @@ NOTE: No more userId require while score submitting, becasue token already has t
 #### HTTP Method: GET
 
 #### Response
-
+```json
 {
     "userId": "1",
     "rank": 1,
     "score": 100
 }
-
+```
 #### OR
-
+```json
 {
     "error": "Invalid User ID"
 }
-
+```
 
 
 
