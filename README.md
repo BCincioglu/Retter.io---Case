@@ -46,6 +46,7 @@ docker compose up --build
 
 {
     "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxIiwiaWF0IjoxNzM1MDg0NzY0LCJleHAiOjE3MzUwODgzNjR9.dMV7lLeluKo_ykB46RmCQaYFRkQjFM9y8DuPLa9Lb-w"
+    
 }
 
 ### 2. Submit Score
