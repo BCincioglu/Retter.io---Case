@@ -13,7 +13,6 @@ dotenv.config();
 app.use(bodyParser.json());
 
 connectDB();
-
 seedUsers();
 
 app.use('/leaderboard', leaderboardRoutes);
