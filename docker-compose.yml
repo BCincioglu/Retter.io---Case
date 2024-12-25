@@ -23,7 +23,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - redis_data:/data # Redis verileri için kalıcı hacim
+      - redis_data:/data 
     command: ["redis-server", "--appendonly", "yes"]
 
 volumes:
